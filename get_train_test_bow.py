@@ -104,15 +104,15 @@ for t in tags_50:
 print len(used_indices)
 print len(tags_train)
 
-with open('tags_train2', 'wb') as fp:
+with open('tags_train', 'wb') as fp:
 	pickle.dump(tags_train, fp)
 
-with open('tags_test2', 'wb') as fp:
+with open('tags_test', 'wb') as fp:
 	pickle.dump(tags_test, fp)
 
-with open('data_train_bow2', 'wb') as fp:
+with open('data_train_bow', 'wb') as fp:
 	pickle.dump(data_train_bow, fp)
 
-with open('data_test_bow2', 'wb') as fp:
+with open('data_test_bow', 'wb') as fp:
 	pickle.dump(data_test_bow, fp)
 
