@@ -18,6 +18,8 @@
 #### </br>
 
 ### Running the Code
-#### To run the code please execute:
+#### To run the necessary precomputations, run:
 #### ```>>bash run.sh```
+#### To perform one-vs-all classification for a particular tag, run:
+#### ```>>python bow_classify.py```
 #### To modify the tag for which you want to see the classification, change the tag in the main function in 'bow_classify.py'.
