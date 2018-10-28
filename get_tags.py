@@ -122,7 +122,7 @@ def get_tags():
 
 def get_talk_with_tag(talk_tags, tag):
 
-	with open('talk_tags','rb') as fp:
+	with open('tags_train','rb') as fp:
 		talk_tags = pickle.load(fp)
 	
 	talks = []
