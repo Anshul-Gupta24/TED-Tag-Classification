@@ -76,7 +76,7 @@ if __name__ == '__main__':
 	for tag in tags_50:
 		bow = get_bow(tag)
 
-		with open('./tag_bow100/tag:'+tag, 'wb') as fp:
-			pickle.dump(bow, fp)
+	with open('./tag_bow100/tag:'+tag, 'wb') as fp:
+		pickle.dump(bow, fp)
 
-	print get_bow('science')
+	#print get_bow('science')
