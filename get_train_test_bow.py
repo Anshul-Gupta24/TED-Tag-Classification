@@ -8,6 +8,13 @@ import pandas as pd
 import nltk
 import random
 
+
+
+
+# change fraction of test data
+frac_test = 0.1
+
+
 df = pd.read_csv('transcripts.csv',encoding='utf-8')
 
 transcripts = df['transcript'].values
@@ -85,7 +92,7 @@ for t in tags_50:
 
 	used_indices.extend(talks)
 
-	num_talk_test = int(0.1 * len(talks))
+	num_talk_test = int(frac_test * len(talks))
 	test_indices = talks[:num_talk_test]
 	train_indices = talks[num_talk_test:]
 
