@@ -18,29 +18,11 @@ with open('data_train_bow', 'rb') as fp:
 for t in data_train:
 	data.append(' '.join(t))
 
-#with open('data_test_bow', 'rb') as fp:
-#	data_test = pickle.load(fp)
-
-#for t in data_test:
-#	data_t.append(' '.join(t))
-
-'''
-with open('data_train_bow_text', 'wb') as fp:
-	pickle.dump(data, fp)
-
-with open('data_test_bow_text', 'wb') as fp:
-	pickle.dump(data_t, fp)
-
-'''
 with open('tags_train', 'rb') as fp:
 	talk_tags = pickle.load(fp)
 
 with open('tags_50', 'rb') as fp:
 	tags_50 = pickle.load(fp)
-
-#with open('data_2','rb') as fp:
-#	data = pickle.load(fp)
-
 
 with open('vocab','rb') as fp:
 	vocab = pickle.load(fp)
@@ -68,37 +50,26 @@ def get_bow(tag):
 
 	talks = get_tags.get_talk_with_tag(talk_tags,tag)
 	
-	# get -ve classes
-	talks_n = range(len(data))
-        for i in talks:
-                talks_n.remove(i)
-
-        talks_n = random.sample(talks_n, len(talks))
-	
-	#talks.extend(talks_n)
-
 	score = get_score([data[i] for i in talks])
-	
-	
+		
 	#print score
-	#print score.todense().shape
 	score = np.array(score.todense())
 	#print score.shape
 	sum_score = np.sum(score, axis=0)
 	#print sum_score
 	np.squeeze(sum_score)
-	#print sum_score[8]
-	#print sum_score[45]
 	#print sum_score.shape
 
 
-	# get top 50 words with highest tf-idf scores
+	# get top 100 words with highest tf-idf scores
 
 	indexes = sum_score.argsort()[-100:]
 
 	bow = [vocab[i] for i in indexes]
 
 	return bow
+
+
 
 if __name__ == '__main__':
 
