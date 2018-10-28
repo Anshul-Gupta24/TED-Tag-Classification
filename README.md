@@ -18,7 +18,7 @@
 #### </br>
 
 ### Running the Code
-#### To run the necessary precomputations, run:
+#### To perform the necessary precomputations, run:
 #### ```>>bash run.sh```
 #### To perform one-vs-all classification for a particular tag, run:
 #### ```>>python bow_classify.py```
