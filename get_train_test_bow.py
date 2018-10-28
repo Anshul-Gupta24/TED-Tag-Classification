@@ -74,6 +74,9 @@ def shuffle(X, ind):
 
         return T
 
+
+# Shuffle the transcripts for a more even distribution of tags across the train and test set
+
 shuffled_ind = range(len(transcripts))
 random.shuffle(shuffled_ind)
 
