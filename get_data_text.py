@@ -8,19 +8,19 @@ def get_text(transcripts):
 	return transcripts
 
 
-with open('data_train_bow2', 'rb') as fp:
-	data_train_bow2 = pickle.load(fp)
+with open('data_train_bow', 'rb') as fp:
+	data_train_bow = pickle.load(fp)
 
-with open('data_test_bow2', 'rb') as fp:
-	data_test_bow2 = pickle.load(fp)
+with open('data_test_bow', 'rb') as fp:
+	data_test_bow = pickle.load(fp)
 
 
-data_train_bow_text2 = get_text(data_train_bow2)
-data_test_bow_text2 = get_text(data_test_bow2)
+data_train_bow_text = get_text(data_train_bow)
+data_test_bow_text = get_text(data_test_bow)
 		
 
-with open('data_test_bow_text2', 'wb') as fp:
-	pickle.dump(data_test_bow_text2, fp)
+with open('data_test_bow_text', 'wb') as fp:
+	pickle.dump(data_test_bow_text, fp)
 
-with open('data_train_bow_text2', 'wb') as fp:
-	pickle.dump(data_train_bow_text2, fp)
+with open('data_train_bow_text', 'wb') as fp:
+	pickle.dump(data_train_bow_text, fp)
