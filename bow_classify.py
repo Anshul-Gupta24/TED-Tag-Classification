@@ -1,8 +1,9 @@
 '''
 	get tf-idf scores of words in bow for a tag
-	train model using logistic regression
+	train model using naive bayes/ logistic regression/ neural network
 	repeat for every tag
 '''
+
 import pickle
 import numpy as np
 import random
@@ -12,21 +13,19 @@ import sklearn
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 
-# 2 is simply randomized version of first
-# hope is that more accurate train, test distribution
 
-with open('tags_train2', 'rb') as fp:
+with open('tags_train', 'rb') as fp:
 	tags_train = pickle.load(fp)
 
-with open('tags_test2', 'rb') as fp:
+with open('tags_test', 'rb') as fp:
 	tags_test = pickle.load(fp)
 
 
-with open('data_train_bow_text2', 'rb') as fp:
+with open('data_train_bow_text', 'rb') as fp:
 	data_train = pickle.load(fp)
 
 
-with open('data_test_bow_text2', 'rb') as fp:
+with open('data_test_bow_text', 'rb') as fp:
 	data_test = pickle.load(fp)
 
 
